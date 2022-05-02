@@ -1,5 +1,5 @@
 import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit"
-import { IUser } from "../../services/model/user"
+import { IUser } from "services/model/user"
 
 interface MenuState {
    user : any,

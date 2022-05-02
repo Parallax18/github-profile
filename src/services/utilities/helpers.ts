@@ -5,8 +5,8 @@ import {
     signInWithPopup,
     GithubAuthProvider,
   } from "firebase/auth";
-  import { auth } from "../firebase";
-import { IUser } from "../services/model/user";
+  import { auth } from "../../firebase";
+import { IUser } from "services/model/user";
   const signInWithGithub = async () => {
 
     try {

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Logo from "../../assets/images/github-logo.svg";
+import Logo from "assets/images/github-logo.svg";
 import {
     FormControl,
     FormLabel,
@@ -17,7 +17,7 @@ import {
 //   @ts-ignore
 import LoginGithub  from  "react-login-github"
 import { Octokit } from 'octokit';
-import { signInWithGithub } from '../../utils/helpers';
+import { signInWithGithub } from 'services/utilities/helpers';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 

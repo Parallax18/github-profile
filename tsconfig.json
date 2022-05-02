@@ -1,5 +1,19 @@
 {
   "compilerOptions": {
+    //other rules
+    "baseUrl": "src",
+    
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@helpers/*": ["./helpers/*"], 
+      "@assets/*": ["./assets/*"],
+      "@features/*": ["./features/*"],
+      "@firebase/*": ["./firebase/*"],
+      "@hoc/*": ["./hoc/*"],
+      "@pages/*": ["./pages"],
+      "@services/*": ["./services"]
+    },
+
     "target": "es5",
     "lib": [
       "dom",

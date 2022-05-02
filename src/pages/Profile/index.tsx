@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import MainSection from '../../components/MainSection';
+
+import MainSection from 'components/MainSection';
 import { Center, Flex } from '@chakra-ui/react';
-import Nav from '../../components/Nav';
-import SideSection from '../../components/SideSection';
+import Nav from 'components/Nav';
+import SideSection from 'components/SideSection';
 
 
 

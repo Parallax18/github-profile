@@ -6,8 +6,8 @@ import {
 import storage from 'redux-persist/lib/storage'
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { persistReducer } from 'redux-persist'
-import authSlice from "../features/api/authSlice";
-import {apiSlice} from "../features/api/apiSlice";
+import authSlice from "features/api/authSlice";
+import {apiSlice} from "features/api/apiSlice";
 
 
 const rootReducer = combineReducers({
@@ -39,4 +39,3 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export default store;
 
-// 6c74b90a3cbd017cca772280aff92bf65afb01d4

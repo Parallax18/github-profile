@@ -1,6 +1,6 @@
 import { Flex, Image } from '@chakra-ui/react';
 import React from 'react';
-import Logo from "../assets/images/github-logo.svg";
+import Logo from "assets/images/github-logo.svg";
 
 const Nav = () => {
   return (

@@ -1,6 +1,6 @@
 import { Flex, HStack, Text, VStack, Box } from '@chakra-ui/react'
 import React from 'react'
-import { IRepo } from '../../services/model/repo'
+import { IRepo } from 'services/model/repo'
 import moment from "moment";
 import Skeleton from 'react-loading-skeleton';
 

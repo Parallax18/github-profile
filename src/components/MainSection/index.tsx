@@ -2,11 +2,11 @@ import { VStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import RepositoryItem from './RepositoryItem'
 import TopBar from './TopBar'
-import reposTask from "../../services/api/tasks/github/repos"
-import { useGetRepositoriesQuery } from '../../features/api/apiSlice'
-import { IRepo } from '../../services/model/repo'
+import { useGetRepositoriesQuery } from 'features/api/apiSlice'
+import { IRepo } from 'services/model/repo'
 import { useSelector } from 'react-redux'
-import Skeleton from 'react-loading-skeleton'
+import Lottie from "lottie-react";
+import loadingAnimation from 'assets/lottie/loader.json'
  
 const MainSection = () => {
 
@@ -20,7 +20,6 @@ const MainSection = () => {
   const [repoData, setRepoData] = useState([])
 
   useEffect(() => {
-      console.log(isLoading)
       data && setRepoData(data)
   }, [data])
   
@@ -28,14 +27,18 @@ const MainSection = () => {
 
   const search = (v,type) => {
     console.log({v, type})
+    if(!type.length) {
+      
+      setRepoData(data) 
+      return
+    }
+ 
     const searched = data.filter((i) =>  i[type] && i[type].toLowerCase().includes(v.toLowerCase()))
 
     console.log(searched)
 
     setRepoData(searched)
   }
-
-
   
   return (
     <>
@@ -43,7 +46,17 @@ const MainSection = () => {
 
 
         <VStack mt={5} w={"full"} >
-          {repoData?.slice(0,20).map((repo : IRepo)=>(
+        {isLoading && 
+        <Lottie animationData={loadingAnimation}
+          height={400}
+          width={400}
+          autoplay
+          loop
+          />
+
+        }
+          
+          {!isLoading && repoData?.slice(0,20).map((repo : IRepo)=>(
             <RepositoryItem repo={repo} />
           ))}
           

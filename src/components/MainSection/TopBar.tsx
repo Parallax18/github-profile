@@ -38,14 +38,20 @@ const TopBar = ({searchRepo}) => {
                 language
             </MenuButton>
             <MenuList>
-                <MenuItem>All</MenuItem>
+                   {/* @ts-ignore */}
+                <MenuItem onClick={(e) => handleSearch(e.target.value, "")}> All</MenuItem>
                 {/* @ts-ignore */}
                 <MenuItem value="Javascript" type={"button"} onClick={(e) => handleSearch(e.target.value, "language")}>Javascript</MenuItem>
-                <MenuItem>Vue</MenuItem>
-                <MenuItem>CSS</MenuItem>
-                <MenuItem>HTML</MenuItem>
-                <MenuItem>Typescript</MenuItem>
-                <MenuItem>SCSS</MenuItem>
+                {/* @ts-ignore */}
+                <MenuItem value="Vue" type={"button"} onClick={(e) => handleSearch(e.target.value, "language")}>Vue</MenuItem>
+                {/* @ts-ignore */}
+                <MenuItem value="CSS" type={"button"} onClick={(e) => handleSearch(e.target.value, "language")}>CSS</MenuItem>
+                {/* @ts-ignore */}
+                <MenuItem value="HTML" type={"button"} onClick={(e) => handleSearch(e.target.value, "language")}>HTML</MenuItem>
+                {/* @ts-ignore */}
+                <MenuItem value="Typescript" type={"button"} onClick={(e) => handleSearch(e.target.value, "language")}>Typescript</MenuItem>
+                {/* @ts-ignore */}
+                <MenuItem value="SCSS" type={"button"} onClick={(e) => handleSearch(e.target.value, "language")}>SCSS</MenuItem>
             </MenuList>
         </Menu>
         <Menu>
