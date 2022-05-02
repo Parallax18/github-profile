@@ -1,17 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
 import Login from 'pages/Login';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import { auth } from "./firebase";
+import { auth } from "./services/firebase";
 import {
-  onAuthStateChanged
+  onAuthStateChanged, signOut
 } from "firebase/auth";
 import { useDispatch } from 'react-redux';
-import { userBuilder } from './services/utilities/helpers';
-import { authenticateUser } from './features/api/authSlice';
+import { logout, userBuilder } from './services/utilities/helpers';
+import { authenticateUser, logoutUser } from './features/api/authSlice';
 import Profile from './pages/Profile';
 import PrivateRoute  from './hoc/isAuthenticated';
 import Lottie from "lottie-react";
@@ -35,6 +33,16 @@ function App() {
     });
     return unsubscribe;
   });
+
+  // useEffect(() => {
+  //   signOut()
+  // }, [])
+
+  const signOut = async () => {
+    await logout()
+    dispatch(logoutUser())
+  }
+  
  
   return (
  <div className="App bg-[#0d1117] font-sans"> 

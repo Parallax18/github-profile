@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from "assets/images/github-logo.svg";
 import {
     FormControl,
@@ -25,6 +25,7 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
 // @ts-ignore
     const {isAuthenticated} = useSelector(state => state.authState)
+    const [loading, setloading] = useState(false)
     const navigate = useNavigate()
     useEffect(() => {
       if(isAuthenticated){
@@ -33,6 +34,23 @@ const Login = () => {
                 })
       }
     }, [isAuthenticated])
+
+    const signIn = async( ) => {
+
+        try {
+
+            setloading(true)
+            await signInWithGithub()
+            
+        } catch (error) {
+            console.log({error});
+            alert("Somethign went wrong, please try again!")
+        }
+        finally{
+            setloading(false)
+        }
+
+    }
     
     
     
@@ -59,7 +77,7 @@ const Login = () => {
                 </FormControl>
                 </VStack> */}
 
-                <Button bg="#238636" _hover={{backgroundColor: "green.500"}} size={"lg"} w="full" color={"white"} onClick={signInWithGithub}>Sign in</Button>
+                <Button isLoading={loading} bg="#238636" _hover={{backgroundColor: "green.500"}} size={"lg"} w="full" color={"white"} onClick={signIn}>Sign in</Button>
             </form>
 
             {/* <Flex fontSize={"sm"} color="white" p={5} justifyContent="center" rounded={"lg"} w="full" mt={5} className="border-[#21262e] border">

@@ -5,7 +5,7 @@ import {
     signInWithPopup,
     GithubAuthProvider,
   } from "firebase/auth";
-  import { auth } from "../../firebase";
+  import { auth } from "../firebase";
 import { IUser } from "services/model/user";
   const signInWithGithub = async () => {
 
@@ -17,7 +17,7 @@ import { IUser } from "services/model/user";
     }
   };
 
-  const logoutUser = () => {
+  const logout = () => {
     signOut(auth);
   };
 
@@ -38,4 +38,4 @@ import { IUser } from "services/model/user";
 
   }
 
-  export {signInWithGithub, logoutUser, userBuilder}
+  export {signInWithGithub, logout, userBuilder}

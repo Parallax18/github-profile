@@ -22,7 +22,7 @@ const TopBar = ({searchRepo}) => {
     <HStack className='w-full' alignItems={"center"} justifyContent="center">
         <Input onChange={(e) => handleSearch(e.target.value, "name")}  id='search' placeholder='Find a repository' minW={500} flex={1} type='text' bg="#0d1117"  borderColor={"#21262e"} size="sm" rounded={"md"} color={"gray.300"} />
         <Menu direction='ltr'>
-            <MenuButton color={"gray"} fontSize="sm" sx={{bg: "#161a22"}} as={Button} h={7} rightIcon={<FiChevronDown />}>
+            <MenuButton color={"gray"} fontSize="sm" sx={{bg: "#161a22"}} as={Button} h={7} disabled rightIcon={<FiChevronDown />}>
                 Type
             </MenuButton>
             <MenuList sx={{bg: "#161a22", border: "1px solid #21262e"}} color={"gray"}>
@@ -37,7 +37,7 @@ const TopBar = ({searchRepo}) => {
             <MenuButton  color={"gray"} fontSize="sm" sx={{bg: "#161a22"}} as={Button} h={7} rightIcon={<FiChevronDown />}>
                 language
             </MenuButton>
-            <MenuList>
+            <MenuList sx={{bg: "#161a22", border: "1px solid #21262e"}} color={"gray"}>
                    {/* @ts-ignore */}
                 <MenuItem onClick={(e) => handleSearch(e.target.value, "")}> All</MenuItem>
                 {/* @ts-ignore */}
@@ -55,7 +55,7 @@ const TopBar = ({searchRepo}) => {
             </MenuList>
         </Menu>
         <Menu>
-            <MenuButton color={"gray"} fontSize="sm" sx={{bg: "#161a22"}} as={Button} h={7} rightIcon={<FiChevronDown />}>
+            <MenuButton color={"gray"} fontSize="sm" sx={{bg: "#161a22"}} as={Button} h={7} disabled rightIcon={<FiChevronDown />}>
                 Sort
             </MenuButton>
             <MenuList>
