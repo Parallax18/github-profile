@@ -11,7 +11,7 @@ const SideSection = () => {
     const {user} = useSelector(state => state.authState)
 
   return (
-      <Box>
+      <Box position={'fixed'}>
         <VStack>
             <Box position={"relative"}>
                 <Box rounded="full" className='border-4 border-[#21262e]'>
@@ -33,13 +33,13 @@ const SideSection = () => {
                     <Flex color={"gray.500"} alignItems="center">
                         <FiUsers />
                         <Text ml={1} fontSize="sm">
-                            <Text><b className='text-gray-300'>3</b> followers</Text>    
+                            <Text><b className='text-gray-300'>{user.followers}</b> followers</Text>
                         </Text>
                     </Flex>
                     <Box className='text-gray-300 items-center justify-center'>.</Box>
                     <Flex color={"gray.500"} fontSize="sm" alignItems="center">
                         <Text>
-                            <Text><b className='text-gray-300'>21</b> following</Text>    
+                            <Text><b className='text-gray-300'>{user.following}</b> following</Text>
                         </Text>
                     </Flex>
             </HStack>
@@ -55,10 +55,12 @@ const SideSection = () => {
                 <FiMail />
                 <Text fontSize="sm">{user.email}</Text>
             </HStack>
-            <HStack color={"gray.500"}>
-                <FaTwitter />
-                <Text fontSize="sm">@Techbro</Text>
-            </HStack>
+            {user.twitter_username && (
+                <HStack color={'gray.500'}>
+                    <FaTwitter />
+                    <Text fontSize="sm">{user.twitter_username}</Text>
+                </HStack>
+            )}
         </VStack>
 
         <Box borderTop={"1px"} mt={10} alignItems="start" pt={5}>

@@ -14,6 +14,5 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
 
-// https://github-repo-finder-app.firebaseapp.com/__/auth/handler
 
 

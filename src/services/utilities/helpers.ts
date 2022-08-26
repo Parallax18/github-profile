@@ -23,16 +23,18 @@ import { IUser } from "services/model/user";
 
   const userBuilder =(data : any) : IUser => {
     console.log({data})
-      const user : IUser = {
-          displayName  : data.displayName,
-          email : data.email,
-          photoUrl : data.photoURL,
-          username : data.reloadUserInfo.providerUserInfo[0].screenName,
-          lastLogin :  data.reloadUserInfo.lastLoginAt,
-          createdAt : data.metadata.createdAt,
-          accessToken : data.accessToken
-
-      }
+      const user: IUser = {
+          displayName: data.displayName,
+          email: data.email,
+          photoUrl: data.photoURL,
+          username: data.reloadUserInfo.providerUserInfo[0].screenName,
+          lastLogin: data.reloadUserInfo.lastLoginAt,
+          createdAt: data.metadata.createdAt,
+          accessToken: data.accessToken,
+          followers: data.followers,
+          following: data.following,
+          twitter_username: data.twitter_username,
+      };
 
       return user
 

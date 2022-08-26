@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/react'
+import {Box, VStack} from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import RepositoryItem from './RepositoryItem'
 import TopBar from './TopBar'
@@ -28,11 +28,11 @@ const MainSection = () => {
   const search = (v,type) => {
     console.log({v, type})
     if(!type.length) {
-      
-      setRepoData(data) 
+
+      setRepoData(data)
       return
     }
- 
+
     const searched = data.filter((i) =>  i[type] && i[type].toLowerCase().includes(v.toLowerCase()))
 
     console.log(searched)
@@ -41,7 +41,7 @@ const MainSection = () => {
   }
   
   return (
-    <>
+    <Box ml={300} minW={1000} maxW={'full'}>
         <TopBar searchRepo={search} />
 
 
@@ -61,7 +61,7 @@ const MainSection = () => {
           ))}
           
         </VStack>
-    </>
+    </Box>
   )
 }
 
