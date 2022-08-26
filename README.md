@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Thrive agric front end developer assessment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+
+## Firebase
+ 
+The env file for this project was not excluded from the push. This is because it is an assessment and the keys are needed to interact with firebase locally. Also to save you the trouble of creating new firebase variables.
+
+## Deployment
+
+Find the deployed version on this [vercel url](https://github-profile-beta.vercel.app/) . 
 
 ## Available Scripts
 
