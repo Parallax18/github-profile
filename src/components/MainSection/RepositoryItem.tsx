@@ -40,7 +40,7 @@ const RepositoryItem = ({repo}: Props) => {
                         <div className={` ${Colors[language]} w-3 h-3 rounded-full`} />
                         <Text fontSize={"xs"} color={"gray.400"} ml={1} >{language}</Text>
                     </Box>
-                    <Text fontSize={"xs"} color={"gray.400"} >Updated {moment(updated_at).startOf('day').fromNow()} ago</Text>
+                    <Text fontSize={"xs"} color={"gray.400"} >Updated {moment(updated_at).startOf('day').fromNow()}</Text>
                 </HStack>
             </VStack>
 
