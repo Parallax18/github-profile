@@ -44,7 +44,7 @@ const Login = () => {
             
         } catch (error) {
             console.log({error});
-            alert("Somethign went wrong, please try again!")
+            alert("Something went wrong, please try again!")
         }
         finally{
             setloading(false)
@@ -63,27 +63,11 @@ const Login = () => {
             </VStack>
 
             <form className='bg-[#161a22] border border-[#21262e] p-5 rounded-lg w-80'>
-                {/* <VStack spacing={3}>
-                <FormControl>
-                    <FormLabel htmlFor='email' color={"gray.300"} fontSize="sm">Username or email address</FormLabel>
-                    <Input id='email' type='email' bg="#0d1117"  borderColor={"#21262e"} size="sm" rounded={"md"} color={"gray.300"} />
-                </FormControl>
-                <FormControl>
-                    <FormLabel htmlFor='email' color={"gray.300"} fontSize="sm" display={"flex"} w="full" justifyContent="space-between">
-                        <Text>Password</Text>
-                        <Text color="#4c8dd8" fontSize={"xs"}>Forgot password?</Text>
-                    </FormLabel>
-                    <Input id='password' type='password'  bg="#0d1117"  borderColor={"#21262e"} size="sm" rounded={"md"} color={"gray.300"}/>
-                </FormControl>
-                </VStack> */}
+
 
                 <Button isLoading={loading} bg="#238636" _hover={{backgroundColor: "green.500"}} size={"lg"} w="full" color={"white"} onClick={signIn}>Sign in</Button>
             </form>
 
-            {/* <Flex fontSize={"sm"} color="white" p={5} justifyContent="center" rounded={"lg"} w="full" mt={5} className="border-[#21262e] border">
-                <Text color={"gray.300"}>New to Github?</Text>
-                <Text color="#4c8dd8" ml="1">Create an account</Text>.
-            </Flex> */}
         </Center>
         
     </main>
