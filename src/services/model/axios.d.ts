@@ -1,8 +1,8 @@
 export interface IAxios {
    
-    get: Boolean,
-    getRepositories?: Boolean,
-    post: Boolean,
+    get: boolean,
+    getRepositories?: boolean,
+    post: boolean,
     url : string
 
 }
